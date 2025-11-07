@@ -1,1 +1,206 @@
-# Uneb
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UNEB — Sistema de Verificação de Diplomas</title>
+  <style>
+    :root {
+      --azul-uneb: #003366;
+      --vermelho-uneb: #b22222;
+      --branco: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: url("uneb-fundo.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: var(--branco);
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      backdrop-filter: brightness(0.9);
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.4);
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.3rem;
+      letter-spacing: 0.5px;
+    }
+
+    .search-box {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .search-box h1 {
+      margin-bottom: 20px;
+      font-size: 1.4rem;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      margin-bottom: 16px;
+      text-align: center;
+    }
+
+    button {
+      background: var(--vermelho-uneb);
+      border: none;
+      color: var(--branco);
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 100%;
+    }
+
+    button:hover {
+      background: #d22f2f;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <header>Universidade do Estado da Bahia — Sistema de Verificação de Diplomas</header>
+
+  <div class="search-box">
+    <h1>Consultar autenticidade do diploma</h1>
+    <form onsubmit="return buscarDiploma(event)">
+      <input type="text" id="codigo" placeholder="Digite o código do diploma (ex: 63466-75)" required />
+      <button type="submit">Verificar</button>
+    </form>
+    <p id="erro" style="color: #ffcccc; display: none;">Código não encontrado.</p>
+  </div>
+
+  <footer>© 2025 Universidade do Estado da Bahia — UNEB</footer>
+
+  <script>
+    function buscarDiploma(event) {
+      event.preventDefault();
+      const codigo = document.getElementById("codigo").value.trim();
+      if (codigo === "63466-75") {
+        window.location.href = "63466-75.html";
+      } else {
+        document.getElementById("erro").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html><!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>UNEB — Verificação de Diploma 63466-75</title>
+  <style>
+    :root {
+      --azul-uneb: #003366;
+      --vermelho-uneb: #b22222;
+      --branco: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background: url("uneb-fundo.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: var(--branco);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      backdrop-filter: brightness(0.9);
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+      width: 90%;
+      max-width: 500px;
+    }
+
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--branco);
+    }
+
+    p {
+      margin: 8px 0;
+      font-size: 1rem;
+    }
+
+    .ativo {
+      color: #4caf50;
+      font-weight: bold;
+    }
+
+    a {
+      color: var(--vermelho-uneb);
+      text-decoration: none;
+      margin-top: 20px;
+      display: inline-block;
+      font-weight: bold;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #eee;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Verificação de Diploma</h1>
+    <p><strong>Nome:</strong> Clezia Tavares dos Santos</p>
+    <p><strong>Curso:</strong> Mestrado em Letras</p>
+    <p><strong>Instituição:</strong> Universidade do Estado da Bahia (UNEB)</p>
+    <p><strong>Data de Conclusão:</strong> 25/08/2024</p>
+    <p><strong>Registro:</strong> 63466-75</p>
+    <p class="ativo">✅ Diploma ativo</p>
+    <a href="index.html">← Voltar à verificação</a>
+  </div>
+
+  <footer>© 2025 Universidade do Estado da Bahia — UNEB</footer>
+</body>
+</html>
